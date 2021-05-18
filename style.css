@@ -10,7 +10,6 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 90px;
-  border-bottom: 1px solid black;
 }
 #pageContent .heading{
   width: unset;
@@ -35,6 +34,10 @@
 #year{
   margin-top: 0px;
   font-size: 18px;
+}
+input{
+  width: 440px;
+  font-size: 22px;
 }
 
 
