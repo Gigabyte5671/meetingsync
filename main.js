@@ -31,7 +31,7 @@ function decodeQuery(){
     query = query.split("=")[1]; //Get the query data
     
     var meetingTime = new Date(parseInt(query.substr(0,10) + "000"));
-    meetingTime = new Date(meetingTime.getTime() + parseInt(Math.floor(new Date().getTimezoneOffset() * 60).toString() + "000")); //Add the user's timezone offset
+    meetingTime = new Date(meetingTime.getTime() - parseInt(Math.floor(new Date().getTimezoneOffset() * 60).toString() + "000")); //Subtract the user's timezone offset
     
     params.year = meetingTime.getFullYear().toString();
     params.month = months[meetingTime.getMonth()];
