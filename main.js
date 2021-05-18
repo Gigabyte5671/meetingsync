@@ -72,12 +72,14 @@ function decodeQuery(){
 }
 
 function encodeQuery(){
-  if(document.getElementById("input-title").value == ""){
-    alert("Please enter a title.");
-  }else if(document.getElementById("input-date").value == ""){
+  if(document.getElementById("input-date").value == ""){
     alert("Please enter a date.");
   }else{
-    params.title = document.getElementById("input-title").value;
+    if(document.getElementById("input-title").value == ""){
+      params.title = "Untitled Meeting";
+    }else{
+      params.title = document.getElementById("input-title").value;
+    }
     params.day = document.getElementById("input-date").value.substr(8,2);
     params.month = months[parseInt(document.getElementById("input-date").value.substr(5,2))];
     params.year = document.getElementById("input-date").value.substr(0,4);
