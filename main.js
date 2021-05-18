@@ -67,7 +67,7 @@ function decodeQuery(){
     document.getElementById("date").innerHTML = params.day + ordinal(params.day) + " of " + params.month;
     document.getElementById("year").innerHTML = params.year;
   }else{
-    window.location.replace("create/"); //Go to the create page
+    window.location.replace("meetingsync/create/"); //Go to the create page
   }
 }
 
