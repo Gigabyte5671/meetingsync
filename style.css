@@ -1,0 +1,51 @@
+#navbar .navlinks{
+  width: calc(100% - 300px);
+}
+#pageContent{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 90px;
+  border-bottom: 1px solid black;
+}
+#pageContent .heading{
+  width: unset;
+}
+#title{
+  font-size: 30px;
+  border-bottom: 1px solid grey;
+}
+#time{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-top: 2px;
+  padding-bottom: 7px;
+  font-size: 44px;
+  font-weight: 600;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+#date{
+  font-size: 24px;
+}
+#year{
+  margin-top: 0px;
+  font-size: 18px;
+}
+
+
+footer{
+  position: fixed;
+  left: 50%;
+  bottom: 0px;
+  margin: unset;
+  transform: translateX(-50%);
+}
+
+.hidden{
+  display: none !important;
+}
