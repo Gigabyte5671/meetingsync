@@ -1,1 +1,1 @@
-# meetingsync
+# Meeting Sync
