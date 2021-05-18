@@ -27,15 +27,18 @@
         <a href="../" class="logo"><img src="../icons/update_black_24dp.svg" draggable="false" alt=""><div class="title">Meeting Sync</div></a>
         
         <div class="navlinks">
+          <a href="../"><p>Home</p><div></div></a>
           <a href="" class="activeNav"><p>Create</p><div></div></a>
         </div>
       </div>
       
       <div id="pageContent">
-        <div id="title" class="heading"></div>
-        <div id="time" class="heading"></div>
-        <div id="date" class="heading"></div>
-        <div id="year" class="heading"></div>
+        <div class="heading" style="margin-bottom:20px;font-size:26px;">Create a new meeting:</div>
+        <div class="heading" style="border:unset;"><input type="text" id="input-title" name="Title" maxlength="30" placeholder="Meeting Title" required style="width:438px;"></div>
+        <div class="heading"><input type="date" id="input-date" name="Date" required style="width:442px;"></div>
+        <div class="heading"><input type="number" id="input-hour" name="Hour" min="0" max="23" value="0" required style="width:207px;"><b> : </b><input type="number" id="input-minute" name="Minute" min="0" max="59" value="0" required style="width:207px;"></div>
+        <div class="heading"><input type="submit" id="input-submit" name="Create" value="Create" required style="width:446px;cursor:pointer;" onclick="encodeQuery();"></div>
+        <div class="heading" style="border:unset;"><code id="output-link" class="hidden" name="Meeting Link"></code></div>
       </div>
     </main>
     

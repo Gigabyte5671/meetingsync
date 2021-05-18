@@ -39,6 +39,11 @@ input{
   width: 440px;
   font-size: 22px;
 }
+code{
+  margin-top: 20px;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
 
 
 footer{

@@ -40,7 +40,7 @@ function decodeQuery(){
     if(meetingTime.getHours().toString().length < 2){
       params.time = "0" + meetingTime.getHours().toString();
     }else{
-      params.time = meetingTime.getHours().toString()
+      params.time = meetingTime.getHours().toString();
     }
     if(meetingTime.getMinutes().toString().length < 2){
       params.time += ":0" + meetingTime.getMinutes().toString();
@@ -66,20 +66,46 @@ function decodeQuery(){
     document.getElementById("time").innerHTML = params.time;
     document.getElementById("date").innerHTML = params.day + ordinal(params.day) + " of " + params.month;
     document.getElementById("year").innerHTML = params.year;
-    
-    
-    if(success === 0){ //If the query couldn't be parsed
-      console.log("Break 1");
-      //window.location.replace("/"); //Go to the default page
-    }
   }else{
-    console.log("Break 2");
-    //window.location.replace("/"); //Go to the default page
+    window.location.replace("/create/"); //Go to the create page
   }
 }
 
 function encodeQuery(){
+  if(document.getElementById("input-title").value == ""){
+    alert("Please enter a title.");
+  }else if(document.getElementById("input-date").value == ""){
+    alert("Please enter a date.");
+  }else{
+    params.title = document.getElementById("input-title").value;
+    params.day = document.getElementById("input-date").value.substr(8,2);
+    params.month = months[parseInt(document.getElementById("input-date").value.substr(5,2))];
+    params.year = document.getElementById("input-date").value.substr(0,4);
+    //Format the time string nicely
+    if(document.getElementById("input-hour").value.length < 2){
+      params.time = "0" + document.getElementById("input-hour").value;
+    }else{
+      params.time = document.getElementById("input-hour").value;
+    }
+    if(document.getElementById("input-minute").value.length < 2){
+      params.time += ":0" + document.getElementById("input-minute").value;
+    }else{
+      params.time += ":" + document.getElementById("input-minute").value;
+    }
+  }
   
+  var newQuery = dateToUnixTime();
+  newQuery = new Date(newQuery + parseInt(Math.floor(new Date().getTimezoneOffset() * 60).toString())).getTime().toString(); //Add the user's timezone offset
+  if(Date().substr(28,1) == "-"){
+    newQuery += "0";
+  }else{
+    newQuery += "1";
+  }
+  newQuery += Date().substr(29,2);
+  newQuery += encodeTitle(params.title);
+  console.log(window.location.origin + "/?t=" + newQuery);
+  document.getElementById("output-link").innerHTML = window.location.origin + "/?t=" + newQuery;
+  document.getElementById("output-link").classList.remove("hidden");
 }
 
 function encodeTitle(title){
@@ -101,7 +127,6 @@ function decodeTitle(encodedTitle){
   return title;
 }
 
-
 function getCurrentUnixTime(){
   //Compatibility shim
   //if (!Date.now) {
@@ -111,5 +136,26 @@ function getCurrentUnixTime(){
 }
 
 function dateToUnixTime(date){
-  return Math.floor(new Date("1995-12-17T03:24:00").getTime() / 1000);
+  var m;
+  if(months.indexOf(params.month).toString().length < 2){
+    m = "0" + months.indexOf(params.month);
+  }else{
+    m = months.indexOf(params.month);
+  }
+  //Required format: 1995-12-17T03:24:00
+  return Math.floor(new Date(params.year + "-" + m + "-" + params.day + "T" + params.time + ":00").getTime() / 1000);
+}
+
+function copyMeetingLink(){
+  var clipboard = new ClipboardJS(".infoLink"); //Initialize the ClipboardJS function
+  clipboard.on("success", function(event){
+    $(".infoLink").css("animation", "linkCopy 1.8s");
+    $(".infoLink").one("animationend", function(event){
+      $(".infoLink").css("animation", "unset");
+    });
+  });
+  var clipboard = new ClipboardJS("#trackLink"); //Initialize the ClipboardJS function for track links
+  clipboard.on("success", function(event){
+    console.log("Link copied successfully.");
+  });
 }
