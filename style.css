@@ -91,6 +91,7 @@
 input{
   width: 100%;
   font-size: 22px;
+  font-family: sans-serif;
   border: 1px solid grey;
   border-radius: 5px;
   box-sizing: border-box;
