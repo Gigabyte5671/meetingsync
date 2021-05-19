@@ -1,5 +1,5 @@
 #navbar .navlinks{
-  width: calc(100% - 300px);
+  width: calc(100% - 272px);
 }
 #pageContent{
   display: flex;
@@ -39,12 +39,42 @@ input{
   width: 440px;
   font-size: 22px;
 }
-code{
+#output-link{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  border: unset;
+}
+#output-link-text{
   padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
   border: 1px solid grey;
-  border-radius: 3px;
+  border-radius: 3px 0px 0px 3px;
   user-select: all;
+}
+#output-link-copy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 44px;
+  background-color: #EFEFEF;
+  border: 1px solid grey;
+  border-left: unset;
+  border-radius: 0px 3px 3px 0px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#output-link-copy img{
+  width: 85%;
+  transform: rotate(-45deg);
+}
+#output-link-copy:hover{
+  background-color: #E5E5E5;
 }
 
 
