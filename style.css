@@ -8,13 +8,13 @@
   /*color: cornflowerblue;*/
 }
 #navbar .navlinks a div{
-  /*background-color: royalblue;*/
+  background-color: cornflowerblue;
 }
 #navbar .navlinks a:hover{
-  /*color: royalblue;*/
+  color: cornflowerblue;
 }
 #navbar .navlinks .activeNav{
-  /*color: royalblue;*/
+  color: cornflowerblue;
   font-weight: 600;
 }
 #pageContent{
@@ -44,6 +44,7 @@
   border-bottom: 1px solid grey;
 }
 #time{
+  position: relative;
   margin-top: 40px;
   margin-bottom: 20px;
   padding-top: 2px;
@@ -52,6 +53,33 @@
   font-weight: 600;
   border-top: 2px solid grey;
   border-bottom: 2px solid grey;
+  border-radius: 2px;
+}
+#time:before{
+  position: absolute;
+  top: -2px;
+  left: 0px;
+  height: calc(100% + 4px);
+  width: 20%;
+  content: "";
+  background: linear-gradient(to right,
+     rgba(252, 252, 253, 1) 20%,
+     rgba(252, 252, 253, 0) 80%
+  );
+  pointer-events: none;
+}
+#time:after{
+  position: absolute;
+  top: -2px;
+  right: 0px;
+  height: calc(100% + 4px);
+  width: 20%;
+  content: "";
+  background: linear-gradient(to left,
+     rgba(252, 252, 253, 1) 20%,
+     rgba(252, 252, 253, 0) 80%
+  );
+  pointer-events: none;
 }
 #date{
   font-size: 24px;
@@ -75,6 +103,7 @@ input{
   align-items: center;
   margin-top: 20px;
   border: unset;
+  animation: 0.5s ease fadeIn forwards;
 }
 #output-link-text{
   width: calc(100% - 70px);
@@ -89,6 +118,18 @@ input{
   user-select: all;
 }
 #output-link-copy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 44px;
+  background-color: lightskyblue;
+  border: 1px solid grey;
+  border-left: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#output-link-copy-success{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +202,14 @@ input{
   cursor: pointer;
 }
 
+.copy-success{
+  animation: 1.7s ease fadeInOut forwards;
+  pointer-events: none;
+}
+.copy-success-2 img{
+  animation: 1.7s ease fadeInOut forwards;
+}
+
 footer{
   position: fixed;
   left: 50%;
@@ -178,6 +227,12 @@ footer{
 @keyframes fadeIn{
   from{opacity: 0;}
   to{opacity: 1;}
+}
+@keyframes fadeInOut{
+  0%   {opacity: 0;}
+  30%  {opacity: 1;}
+  80%  {opacity: 1;}
+  100% {opacity: 0;}
 }
 .hidden{
   display: none !important;
