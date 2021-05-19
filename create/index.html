@@ -38,7 +38,11 @@
         <div class="heading"><input type="date" id="input-date" name="Date" required style="width:442px;"></div>
         <div class="heading"><input type="number" id="input-hour" name="Hour" min="0" max="23" value="0" required style="width:207px;"><b> : </b><input type="number" id="input-minute" name="Minute" min="0" max="59" value="0" required style="width:207px;"></div>
         <div id="input-submit" class="heading button" style="width:446px;cursor:pointer;" onclick="encodeQuery();"><img src="../icons/task_alt_black_24dp.svg" draggable="false"><p>Create</p></div>
-        <div id="output-link" class="heading hidden" style="border:unset;"><code id="output-link-text" name="Meeting Link" value=""></code><div id="output-link-copy" data-clipboard-target="#output-link-text"><img src="../icons/link_black_24dp.svg" draggable="false"></div></div>
+        <div id="output-link" class="heading hidden" style="border:unset;">
+          <code id="output-link-text" name="Meeting Link" value=""></code>
+          <div id="output-link-copy" title="Copy Link" data-clipboard-target="#output-link-text"><img src="../icons/link_black_24dp.svg" draggable="false"></div>
+          <a id="output-link-open" href="" title="Open Link"><img src="../icons/open_in_new_black_24dp.svg" draggable="false"></a>
+        </div>
       </div>
     </main>
     

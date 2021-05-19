@@ -80,7 +80,6 @@ input{
   background-color: lightskyblue;
   border: 1px solid grey;
   border-left: unset;
-  border-radius: 0px 3px 3px 0px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -89,6 +88,25 @@ input{
   transform: rotate(-45deg);
 }
 #output-link-copy:hover{
+  box-shadow: 0px 0px 3px grey;
+}
+#output-link-open{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 44px;
+  background-color: lightskyblue;
+  border: 1px solid grey;
+  border-left: unset;
+  border-radius: 0px 3px 3px 0px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#output-link-open img{
+  width: 80%;
+}
+#output-link-open:hover{
   box-shadow: 0px 0px 3px grey;
 }
 
@@ -105,6 +123,7 @@ input{
   border: unset;
   border-radius: 20px;
   box-sizing: border-box;
+  cursor: pointer;
   transition: 0.2s ease all;
 }
 .button img{
