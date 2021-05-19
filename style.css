@@ -1,17 +1,21 @@
 #navbar .title{
-  color: cornflowerblue;
+  color: royalblue;
 }
 #navbar .navlinks{
   width: calc(100% - 272px);
 }
+#navbar .navlinks a{
+  /*color: cornflowerblue;*/
+}
 #navbar .navlinks a div{
-  background-color: cornflowerblue;
+  /*background-color: royalblue;*/
 }
 #navbar .navlinks a:hover{
-  color: cornflowerblue;
+  /*color: royalblue;*/
 }
 #navbar .navlinks .activeNav{
-  color: cornflowerblue;
+  /*color: royalblue;*/
+  font-weight: 600;
 }
 #pageContent{
   display: flex;
@@ -25,6 +29,14 @@
   animation: 0.2s ease fadeIn forwards;
 }
 #pageContent .heading{
+  width: 95%;
+  max-width: 440px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+#pageContent #title{
   width: unset;
 }
 #title{
@@ -49,10 +61,11 @@
   font-size: 18px;
 }
 input{
-  width: 440px;
+  width: 100%;
   font-size: 22px;
   border: 1px solid grey;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 #output-link{
   display: flex;
@@ -138,12 +151,23 @@ input{
   box-shadow: 0px 0px 3px grey;
 }
 
+#input-submit{
+  width: 95%;
+  max-width: 440px;
+  cursor: pointer;
+}
+
 footer{
   position: fixed;
   left: 50%;
   bottom: 0px;
   margin: unset;
   transform: translateX(-50%);
+}
+
+
+@media only screen and (max-width: 480px){
+  
 }
 
 
