@@ -94,20 +94,20 @@ function encodeQuery(){
     }else{
       params.time += ":" + document.getElementById("input-minute").value;
     }
+    var newQuery = dateToUnixTime();
+    newQuery = new Date(newQuery + parseInt(Math.floor(new Date().getTimezoneOffset() * 60).toString())).getTime().toString(); //Add the user's timezone offset
+    if(Date().substr(28,1) == "-"){
+      newQuery += "0";
+    }else{
+      newQuery += "1";
+    }
+    newQuery += Date().substr(29,2);
+    newQuery += encodeTitle(params.title);
+    console.log(window.location.origin + "/?t=" + newQuery);
+    document.getElementById("output-link").innerHTML = window.location.origin + "/?t=" + newQuery;
+    document.getElementById("output-link").classList.remove("hidden");
   }
   
-  var newQuery = dateToUnixTime();
-  newQuery = new Date(newQuery + parseInt(Math.floor(new Date().getTimezoneOffset() * 60).toString())).getTime().toString(); //Add the user's timezone offset
-  if(Date().substr(28,1) == "-"){
-    newQuery += "0";
-  }else{
-    newQuery += "1";
-  }
-  newQuery += Date().substr(29,2);
-  newQuery += encodeTitle(params.title);
-  console.log(window.location.origin + "/?t=" + newQuery);
-  document.getElementById("output-link").innerHTML = window.location.origin + "/?t=" + newQuery;
-  document.getElementById("output-link").classList.remove("hidden");
 }
 
 function encodeTitle(title){
