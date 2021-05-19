@@ -10,7 +10,7 @@
 #navbar .navlinks a:hover{
   color: cornflowerblue;
 }
-.activeNav{
+#navbar .navlinks .activeNav{
   color: cornflowerblue;
 }
 #pageContent{
