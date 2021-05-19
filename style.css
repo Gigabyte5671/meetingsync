@@ -1,5 +1,14 @@
+#navbar .title{
+  color: cornflowerblue;
+}
 #navbar .navlinks{
   width: calc(100% - 272px);
+}
+#navbar .navlinks a div{
+  background-color: cornflowerblue;
+}
+#navbar .navlinks a:hover{
+  color: cornflowerblue;
 }
 #pageContent{
   display: flex;
@@ -10,6 +19,7 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 90px;
+  animation: 0.2s ease fadeIn forwards;
 }
 #pageContent .heading{
   width: unset;
@@ -38,6 +48,8 @@
 input{
   width: 440px;
   font-size: 22px;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 #output-link{
   display: flex;
@@ -62,7 +74,7 @@ input{
   align-items: center;
   width: 34px;
   height: 44px;
-  background-color: #EFEFEF;
+  background-color: lightskyblue;
   border: 1px solid grey;
   border-left: unset;
   border-radius: 0px 3px 3px 0px;
@@ -74,9 +86,35 @@ input{
   transform: rotate(-45deg);
 }
 #output-link-copy:hover{
-  background-color: #E5E5E5;
+  box-shadow: 0px 0px 3px grey;
 }
 
+.button{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+  background-color: lightskyblue;
+  border: unset;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: 0.2s ease all;
+}
+.button img{
+  margin-right: 5px;
+}
+.button p{
+  margin: unset;
+  margin-bottom: 3px;
+  font-size: 20px;
+}
+.button:hover{
+  box-shadow: 0px 0px 3px grey;
+}
 
 footer{
   position: fixed;
@@ -86,6 +124,11 @@ footer{
   transform: translateX(-50%);
 }
 
+
+@keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
 .hidden{
   display: none !important;
 }

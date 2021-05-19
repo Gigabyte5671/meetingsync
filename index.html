@@ -16,7 +16,7 @@
     <meta name="twitter:image:alt" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="icons/update_black_24dp.svg">
+    <link rel="shortcut icon" href="icons/update_cornflowerblue_24dp.svg">
     <link rel="stylesheet" href="https://servers.wilderzone.live/css/style.css">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -24,7 +24,7 @@
   <body>
     <main>
       <div id="navbar">
-        <a href="" class="logo"><img src="icons/update_black_24dp.svg" draggable="false" alt=""><div class="title">Meeting Sync</div></a>
+        <a href="" class="logo"><img src="icons/update_cornflowerblue_24dp.svg" draggable="false" alt=""><div class="title">Meeting Sync</div></a>
         
         <div class="navlinks">
           <a href="" class="activeNav"><p>Home</p><div></div></a>
@@ -34,6 +34,7 @@
       
       <div id="pageContent">
         <div id="title" class="heading">No Meeting Found</div>
+        <a id="create-meeting" class="button" style="margin-top:60px;" href="create/"><img src="icons/add_circle_outline_black_24dp.svg" draggable="false"><p>Create a new meeting</p></a>
         <div id="time" class="heading"></div>
         <div id="date" class="heading"></div>
         <div id="year" class="heading"></div>
@@ -46,6 +47,7 @@
   </body>
   
   <script src="lib/site_message.js"></script>
+  <script src="lib/clipboard.min.js"></script>
   <script src="lib/main.js"></script>
   <script>decodeQuery();</script>
 </html>
