@@ -10,6 +10,9 @@
 #navbar .navlinks a:hover{
   color: cornflowerblue;
 }
+.activeNav{
+  color: cornflowerblue;
+}
 #pageContent{
   display: flex;
   flex-direction: column;
