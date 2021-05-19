@@ -77,11 +77,15 @@ input{
   border: unset;
 }
 #output-link-text{
+  width: calc(100% - 70px);
   padding: 10px;
   font-size: 18px;
   font-weight: 600;
   border: 1px solid grey;
   border-radius: 3px 0px 0px 3px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   user-select: all;
 }
 #output-link-copy{
