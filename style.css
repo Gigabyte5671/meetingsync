@@ -260,7 +260,15 @@ footer{
 
 
 @media only screen and (max-width: 480px){
-  
+  .title{
+    display: none;
+  }
+  #navbar .navlinks{
+    margin-left: 10px;
+  }
+  #navbar .navlinks div:first-child(){
+    display: none;
+  }
 }
 
 
