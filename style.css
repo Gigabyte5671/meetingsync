@@ -259,11 +259,29 @@ footer{
 }
 
 
+@media only screen and (max-width: 570px){
+  #navbar .title{
+    margin-top: 6px;
+  }
+  #navbar .navlinks{
+    width: calc(100% - 200px);
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+  #navbar .navlinks div:first-child(){
+    display: none;
+  }
+}
 @media only screen and (max-width: 480px){
-  .title{
+  #navbar .logo img{
+    width: 40px;
+    margin-top: 2px;
+  }
+  #navbar .title{
     display: none;
   }
   #navbar .navlinks{
+    width: calc(100% - 70px);
     margin-left: 10px;
   }
   #navbar .navlinks div:first-child(){
